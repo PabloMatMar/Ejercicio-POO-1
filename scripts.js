@@ -46,3 +46,91 @@ class Profesor extends Persona{
 
 let newProfesor = new Profesor("Alex", "?", "masculino", "FullStack", "Master");
 newProfesor.asignar()
+
+//mayas vs aztecas
+
+class Warrior{
+    constructor(life, power) {
+        this.life = life;
+        this.power = power;
+    }
+    attack() {
+        console.log(`Este guerrero tiene el poder de: ${this.power}.`);
+    }
+    defend(damage){
+        console.log(life - damage)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Maya extends Warrior{
+    constructor(life, power) {
+        super(life, power) // Llama al constructor del padre
+    }
+    
+
+    drink() {
+
+        warriorMaya.power = this.power + 10
+        console.log(warriorMaya.power)
+    }
+
+    attack() {
+        const damage = this.power
+        warriorAztec.defend(damage)
+    }
+    defend(damage){
+        warriorMaya.life= this.life - damage
+        console.log(warriorMaya)
+    }
+};
+
+let warriorMaya = new Maya(30, 10);
+warriorMaya.drink()
+
+
+class Aztec extends Warrior{
+    constructor(life, power, drinkNesquik) {
+        super(life, power) // Llama al constructor del padre
+        this.drinkNesquik = drinkNesquik;
+    }
+
+    drink() {
+
+        warriorAztec.life = this.life + 10
+        console.log(warriorAztec.life)
+    }
+
+    attack() {
+        const damage = this.power
+        warriorMaya.defend(damage)
+    }
+    defend(damage){
+        warriorAztec.life = this.life - damage
+        console.log(warriorAztec)
+    }
+};
+
+let warriorAztec = new Aztec(10, 10);
+
+warriorAztec.drink()
+warriorMaya.drink()
+
+warriorMaya.attack()
+
+warriorAztec.attack()
+
+
